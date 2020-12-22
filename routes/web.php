@@ -19,3 +19,4 @@ $router->get('/', function () use ($router) {
 
 $router->post('/getlist','BiereController@getList');
 $router->post('/getbeer','BiereController@getBeer');
+$router->post('/register','UserController@register');
