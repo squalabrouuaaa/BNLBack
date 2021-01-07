@@ -3,7 +3,7 @@
 class BeerTest extends TestCase
 {
     /**
-     * test getList
+     * testGetList
      * 
      * @return void
      */
