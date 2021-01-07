@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BiereController ;
+use Illuminate\Http\Request;
+
 class BeerTest extends TestCase
 {
     /**
