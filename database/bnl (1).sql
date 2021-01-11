@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 17 déc. 2020 à 10:32
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Hôte : 127.0.0.1:3308
+-- Généré le :  lun. 11 jan. 2021 à 14:11
+-- Version du serveur :  8.0.18
+-- Version de PHP :  7.4.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `biere` (
 
 INSERT INTO `biere` (`id`, `label`, `prix`, `premium`, `description`, `taux_alcool`, `resume`, `path_image`, `volume`, `malt`, `houblon`, `IBU`, `oeil`, `nez`, `bouche`, `EBC`) VALUES
 (1, 'Sherlock blonde', 3.5, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 4.7, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,', '..\\..\\assets\\img\\20180913_150905.jpg', 0.33, 'Pilsen bio et caramel Vienne bio', 'Barbe rouge et Strisselspalt', 26, 'Robe or avec une légère turbidité.', 'Houblonné et pain', 'Goût frais légèrement rond et biscuité', '6-7'),
-(2, 'Bière IPA', 3.5, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 6.8, NULL, '..\\..\\assets\\img\\20180913_150627.jpg', 0.33, 'biscuit', 'cascade', 0, '0', '0', '0', '0');
+(2, 'Bière IPA', 3.5, 1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 6.8, 'Une bière de dégustation florale à l’amertume prononcée.\r\n', '..\\..\\assets\\img\\20180913_150627.jpg', 0.33, 'biscuit', 'cascade', 83, 'Robe cuivrée et voilée', 'Vert et floral.', 'Goût amer et fruité.', '25');
 
 -- --------------------------------------------------------
 
