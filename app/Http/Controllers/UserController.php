@@ -19,7 +19,7 @@ class UserController extends Controller{
                 "password" => $req['password'],
                 "email" => $req['email']
             ]);
-        return response()->json($res[0], 200);
+        return response()->json($res, 200);
     }
 
 }
