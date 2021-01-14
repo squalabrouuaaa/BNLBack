@@ -55,5 +55,10 @@
    <arg value="build/logs/phpcs.xml" />
  </exec>
 </target> 
+<target name="phpcs" >
+  <exec executable="phpcs">
+    <arg line="--report=checkstyle --report-file=/build/logs/phpcs.xml --standard=Zend --extensions=php app/*.php" />
+  </exec>
+ </target>
  
 </project>
