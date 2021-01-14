@@ -19,28 +19,28 @@
   
 <!-- Clean up from previous builds -->
  <target name="clean" description="Cleanup build artifacts">
-  <delete dir="/build/coverage"/>
-  <delete dir="/build/logs"/>
-  <delete dir="/build/api"/>
-  <delete dir="/app/cache"/>
+  <delete dir="build/coverage"/>
+  <delete dir="build/logs"/>
+  <delete dir="build/api"/>
+  <delete dir="app/cache"/>
  </target>
 
 <!-- Prepare for the new build --> 
  <target name="prepare" depends="clean" description="Prepare for build">
-  <mkdir dir="/build/coverage"/>
-  <mkdir dir="/build/logs"/>
-  <mkdir dir="/build/api"/>
-   <mkdir dir="/app/cache"/>
+  <mkdir dir="build/coverage"/>
+  <mkdir dir="build/logs"/>
+  <mkdir dir="build/api"/>
+   <mkdir dir="app/cache"/>
  </target>
 
 <!-- PHP Mess Detector -->
 <target name="phpmd" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
   <exec executable="phpmd">
-   <arg path="/app" />
+   <arg path="app" />
    <arg value="xml" />
    <arg value="codesize,unusedcode,naming" />
    <arg value="--reportfile" />
-   <arg value="/build/logs/pmd.xml" />
+   <arg value="build/logs/pmd.xml" />
   </exec>
  </target>
 
@@ -48,16 +48,8 @@
  <target name="phpcs" description="Check code with PHP Code Sniffer">
  <exec executable="phpcs">
   <arg value="-n" />
-  <arg path="/app" />
+  <arg path="app" />
  </exec>
 </target> 
-
-<!-- Kick off phpunit - this requires 3.4.1 because of assertType(), deprecated in 3.5.x and removed from 3.6.x. --> 
- <target name="phpunit">
-  <exec dir="/build" executable="phpunit" checkreturn="true" description="Run unit tests with PHPUnit">
-  <env key="APPLICATION_ENV" value="testing"/>
-  <arg line="--verbose --stderr" />   
-  </exec>
- </target>
  
 </project>
