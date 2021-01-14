@@ -2,9 +2,9 @@
 <!-- Set some basic project information and targets -->
 <project name="My PHP Projet" default="build">
 
-<target name="build" depends="prepare, phpmd, phpcs, phpunit"/>  
+<target name="build" depends="prepare, phpmd, phpcs"/>  
    
-<target name="build-parallel" depends="prepare, tools-parallel, phpunit"/>
+<target name="build-parallel" depends="prepare, tools-parallel"/>
 
 <property environment="env"/>
 
