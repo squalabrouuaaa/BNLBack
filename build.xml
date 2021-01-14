@@ -19,18 +19,18 @@
   
 <!-- Clean up from previous builds -->
  <target name="clean" description="Cleanup build artifacts">
-  <delete dir="${basedir}/build/coverage"/>
-  <delete dir="${basedir}/build/logs"/>
-  <delete dir="${basedir}/build/api"/>
-  <delete dir="${basedir}/application/cache"/>
+  <delete dir="/build/coverage"/>
+  <delete dir="/build/logs"/>
+  <delete dir="/build/api"/>
+  <delete dir="/app/cache"/>
  </target>
 
 <!-- Prepare for the new build --> 
  <target name="prepare" depends="clean" description="Prepare for build">
-  <mkdir dir="${basedir}/build/coverage"/>
-  <mkdir dir="${basedir}/build/logs"/>
-  <mkdir dir="${basedir}/build/api"/>
-   <mkdir dir="${basedir}/application/cache"/>
+  <mkdir dir="/build/coverage"/>
+  <mkdir dir="/build/logs"/>
+  <mkdir dir="/build/api"/>
+   <mkdir dir="/app/cache"/>
  </target>
 
 <!-- Lint the PHP files in application dir. Linting the whole ZF framework library takes forever -->
@@ -38,7 +38,7 @@
   <apply executable="php" failonerror="true">
    <arg value="-l" />
    
-   	<fileset dir="${basedir}/application">
+   	<fileset dir="app">
     	<include name="**/*.php" />
     <modified />
    </fileset>
@@ -48,11 +48,11 @@
 <!-- PHP Mess Detector -->
 <target name="phpmd" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
   <exec executable="phpmd">
-   <arg path="${basedir}/application" />
+   <arg path="/app" />
    <arg value="xml" />
    <arg value="codesize,unusedcode,naming" />
    <arg value="--reportfile" />
-   <arg value="${basedir}/build/logs/pmd.xml" />
+   <arg value="/build/logs/pmd.xml" />
   </exec>
  </target>
 
@@ -60,13 +60,13 @@
  <target name="phpcs" description="Check code with PHP Code Sniffer">
  <exec executable="phpcs">
   <arg value="-n" />
-  <arg path="${basedir}/application" />
+  <arg path="/app" />
  </exec>
 </target> 
 
 <!-- Kick off phpunit - this requires 3.4.1 because of assertType(), deprecated in 3.5.x and removed from 3.6.x. --> 
  <target name="phpunit">
-  <exec dir="${basedir}/tests" executable="phpunit" failonerror="true" description="Run unit tests with PHPUnit">
+  <exec dir="/tests" executable="phpunit" failonerror="true" description="Run unit tests with PHPUnit">
   <env key="APPLICATION_ENV" value="testing"/>
   <arg line="--verbose --stderr" />   
   </exec>
