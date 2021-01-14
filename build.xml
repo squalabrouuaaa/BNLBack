@@ -49,6 +49,10 @@
  <exec executable="phpcs">
   <arg value="-n" />
   <arg path="app" />
+  <arg value="xml" />
+   <arg value="codesize,unusedcode,naming" />
+   <arg value="--reportfile" />
+   <arg value="build/logs/pmd.xml" />
  </exec>
 </target> 
  
