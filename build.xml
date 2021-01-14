@@ -2,9 +2,9 @@
 <!-- Set some basic project information and targets -->
 <project name="My PHP Projet" default="build">
 
-<target name="build" depends="prepare, lint, phpmd, phpcs, phpunit"/>  
+<target name="build" depends="prepare, phpmd, phpcs, phpunit"/>  
    
-<target name="build-parallel" depends="prepare,lint, tools-parallel, phpunit"/>
+<target name="build-parallel" depends="prepare, tools-parallel, phpunit"/>
 
 <property environment="env"/>
 
@@ -33,18 +33,6 @@
    <mkdir dir="/app/cache"/>
  </target>
 
-<!-- Lint the PHP files in application dir. Linting the whole ZF framework library takes forever -->
- <target name="lint" description="Perform syntax check of sourcecode files">
-  <apply executable="php" failonerror="true">
-   <arg value="-l" />
-   
-   	<fileset dir="app">
-    	<include name="**/*.php" />
-    <modified />
-   </fileset>
-  </apply>
- </target>
- 
 <!-- PHP Mess Detector -->
 <target name="phpmd" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
   <exec executable="phpmd">
