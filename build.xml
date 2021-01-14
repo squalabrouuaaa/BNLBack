@@ -52,7 +52,7 @@
   <arg value="xml" />
    <arg value="codesize,unusedcode,naming" />
    <arg value="--reportfile" />
-   <arg value="build/logs/pmd.xml" />
+   <arg value="build/logs/phpcs.xml" />
  </exec>
 </target> 
  
