@@ -55,7 +55,7 @@
     <target name="phpunit">
         <echo msg="Running unit tests" />
         <exec executable="phpunit" passthru="true" checkreturn="true" >
-          <arg line="build/phpunit.xml --report-file='build/logs/phpunit.xml'" />
+          <arg line="build/phpunit.xml --log-junit='build/logs/phpunit.xml'" />
         </exec>
         <!-- doesn't seem to work with namespaced versions of phpunit 
         <phpunit codecoverage="false">
