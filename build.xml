@@ -57,14 +57,5 @@
         <exec executable="phpunit" passthru="true" checkreturn="true" >
           <arg line="build/phpunit.xml --log-junit='build/logs/phpunit.xml'" />
         </exec>
-        <!-- doesn't seem to work with namespaced versions of phpunit 
-        <phpunit codecoverage="false">
-            <formatter type="plain" usefile="false"/>
-            <batchtest>
-                <fileset dir="./tests/">
-                    <include name="**/*Test*.php"/>
-                </fileset>
-            </batchtest>
-        </phpunit>-->
     </target>
 </project>
