@@ -52,7 +52,7 @@
  </target>
 
  <!-- PHPUnit -->
-    <target name="Phpunittests">
+    <target name="phpunit">
         <echo msg="Running unit tests" />
         <exec executable="./vendor/bin/phpunit" passthru="true" checkreturn="true" />
         <!-- doesn't seem to work with namespaced versions of phpunit -->
