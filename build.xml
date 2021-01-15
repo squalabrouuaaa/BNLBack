@@ -54,8 +54,8 @@
  <!-- PHPUnit -->
     <target name="phpunit">
         <echo msg="Running unit tests" />
-        <exec executable="phpunit" passthru="true" checkreturn="true" >
-          <arg line="build/phpunit.xml --log-junit='build/logs/phpunit.xml'" />
+        <exec executable="./vendor/bin/phpunit" passthru="true" checkreturn="true" >
+          <arg line="tests/BeerTest.php --log-junit='build/logs/phpunit.xml'" />
         </exec>
     </target>
 </project>
