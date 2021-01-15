@@ -51,10 +51,10 @@
   </exec>
  </target>
 
- <!-- PHPUnit -->
+ <!-- PHPUnit  passthru="true" checkreturn="true" -->
     <target name="phpunit">
         <echo msg="Running unit tests" />
-        <exec executable="./vendor/bin/phpunit" passthru="true" checkreturn="true" >
+        <exec executable="./vendor/bin/phpunit">
           <arg line="tests/BeerTest.php tests/UserTest.php --log-junit='build/logs/phpunit.xml'" />
         </exec>
     </target>
