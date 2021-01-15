@@ -54,8 +54,10 @@
  <!-- PHPUnit -->
     <target name="phpunit">
         <echo msg="Running unit tests" />
-        <exec executable="phpunit" passthru="true" checkreturn="true" />
-        <!-- doesn't seem to work with namespaced versions of phpunit -->
+        <exec executable="phpunit" passthru="true" checkreturn="true" >
+          <arg line="build/phpunit.xml --report-file='build/logs/phpunit.xml'" />
+        </exec>
+        <!-- doesn't seem to work with namespaced versions of phpunit 
         <phpunit codecoverage="false">
             <formatter type="plain" usefile="false"/>
             <batchtest>
@@ -63,6 +65,6 @@
                     <include name="**/*Test*.php"/>
                 </fileset>
             </batchtest>
-        </phpunit>
+        </phpunit>-->
     </target>
 </project>
