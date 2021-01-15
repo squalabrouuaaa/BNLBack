@@ -54,9 +54,9 @@
  <!-- PHPUnit -->
     <target name="phpunit">
         <echo msg="Running unit tests" />
-        <exec executable="./vendor/bin/phpunit" passthru="true" checkreturn="true" />
+        <exec executable="phpunit" passthru="true" checkreturn="true" />
         <!-- doesn't seem to work with namespaced versions of phpunit -->
-        <phpunit codecoverage="false" pharlocation="./vendor/bin/phpunit">
+        <phpunit codecoverage="false">
             <formatter type="plain" usefile="false"/>
             <batchtest>
                 <fileset dir="./tests/">
