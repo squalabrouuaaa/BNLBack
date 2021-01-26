@@ -54,4 +54,10 @@
           <arg line="tests/BeerTest.php tests/UserTest.php --log-junit='build/logs/phpunit.xml'" />
         </exec>
     </target>
+
+    <!-- Creation archive report -->
+    <target name="archive">
+        <echo msg="Create zip report" />
+        <exec executable="zip build/logs/report *"/>
+    </target>
 </project>
