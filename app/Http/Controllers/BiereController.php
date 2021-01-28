@@ -16,7 +16,7 @@ class BiereController extends Controller
                 $res = $db->select("SELECT * FROM biere WHERE premium = 1");
                 Log::info(json_encode($res));
                 return response()->json($res, 200);
-                break
+                break;
             
             case 'grandedistribution':
                 $db = app('db')->connection('mysql');
