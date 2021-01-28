@@ -26,7 +26,7 @@ class BeerTest extends TestCase
                 "resume" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit,", 
                 "volume" => 0.33
             )
-        )
+        );
 
         $retour = json_encode($retour);
         $res = json_encode($res);
